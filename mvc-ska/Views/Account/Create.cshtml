@@ -1,0 +1,31 @@
+@model Account
+
+<form asp-controller="Account" asp-action="Create" method="post">
+    <table>
+        <tr>
+            <td>Amount</td>
+            <td><input asp-for="amount" /></td>
+            <td>
+               @Html.ValidationMessageFor(model => model.amount) 
+            </td>
+        </tr>
+        <tr>
+            <td>Remark</td>
+            <td><input asp-for="remark" /></td>
+            <td>
+                @Html.ValidationMessageFor(model => model.remark)
+            </td>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td><input asp-for="date" type="date" /></td>
+            <td>
+                @Html.ValidationMessageFor(model => model.date)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button>Submit</button></td>
+        </tr>
+    </table>
+</form>

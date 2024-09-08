@@ -5,7 +5,7 @@ namespace mvc_ska.services;
 public class AccountService
 {
     public List<Account> accounts;
-    private int nextId;
+    public int nextId;
     public AccountService()
     {
         accounts = new List<Account>
@@ -18,4 +18,5 @@ public class AccountService
         };
         nextId = 6;
     }
+    
 }

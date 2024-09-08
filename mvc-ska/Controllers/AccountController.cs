@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using mvc_ska.Models;
 using mvc_ska.services;
 
 namespace mvc_ska.Controllers;
@@ -12,9 +13,21 @@ public class AccountController : Controller
         _accountService = accountService;
     }
     [HttpGet]
-    // GET
     public IActionResult Index()
     {
             return View();
     }
+
+    public IActionResult Create(Account account)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View("Index", account);
+        }
+
+        account.id = _accountService.nextId++;
+        _accountService.accounts.Add(account);
+        return View("Index");
+    }
+    
 }

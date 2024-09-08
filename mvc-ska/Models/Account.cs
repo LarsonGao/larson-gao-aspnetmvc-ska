@@ -5,7 +5,7 @@ namespace mvc_ska.Models;
 public class Account
 {
     public int id { get; set; }
-    [Range(0, 1E+17)]
+    [Range(0, 1E+17, ErrorMessage = "Amount must be greater than 0")]
     public decimal amount { get; set; }
     [Required]
     public DateTime date { get; set; }
