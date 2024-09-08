@@ -1,8 +1,11 @@
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using mvc_ska.services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddSingleton<AccountService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using mvc_ska.services;
 
-namespace mvc_ska.Controllers;
+namespace mvc_ska.Controllers.api.v1;
 
-[Route("[controller]")]
+[Route("api/v1/[controller]")]
 public class AccountController : Controller
 {
     private readonly AccountService _accountService;
@@ -11,10 +11,10 @@ public class AccountController : Controller
     {
         _accountService = accountService;
     }
-    [HttpGet]
-    // GET
-    public IActionResult Index()
+    
+    [HttpGet("list")]
+    public IActionResult List()
     {
-            return View();
+        return Ok(_accountService.accounts);
     }
 }
