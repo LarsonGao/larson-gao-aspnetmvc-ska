@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using mvc_ska.Models;
+using mvc_ska.Models.ViewModels;
 using mvc_ska.services;
-
 namespace mvc_ska.Controllers;
 
 [Route("[controller]")]
@@ -15,19 +15,30 @@ public class AccountController : Controller
     [HttpGet]
     public IActionResult Index()
     {
-            return View();
-    }
-
-    public IActionResult Create(Account account)
-    {
-        if (!ModelState.IsValid)
+        AccountView model = new AccountView()
         {
-            return View("Index", account);
-        }
-
-        account.id = _accountService.nextId++;
-        _accountService.accounts.Add(account);
-        return View("Index");
+            Account = new Account(),
+            Accounts = _accountService.accounts
+        };
+        return View(model);
     }
     
+    [HttpPost]
+    public IActionResult CreatePartial(Account account)
+    {
+        AccountView model = new AccountView()
+        {
+            Account = account, 
+            Accounts = _accountService.accounts
+        };
+        if (!ModelState.IsValid)
+        {
+            return View( "Index", model);
+        }
+
+        
+        account.Id = _accountService.nextId++;
+        _accountService.accounts.Add(account);
+        return View("Index", model);
+    }
 }

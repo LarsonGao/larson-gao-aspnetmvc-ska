@@ -10,11 +10,11 @@ public class AccountService
     {
         accounts = new List<Account>
         {
-            new Account { id = 1, amount = 1000, date = DateTime.Now, remark = "Initial deposit" },
-            new Account { id = 2, amount = 2000, date = DateTime.Now, remark = "Initial deposit" },
-            new Account { id = 3, amount = 3000, date = DateTime.Now, remark = "Initial deposit" },
-            new Account { id = 4, amount = 4000, date = DateTime.Now, remark = "Initial deposit" },
-            new Account { id = 5, amount = 5000, date = DateTime.Now, remark = "Initial deposit" }
+            new Account { Id = 1, Amount = 1000, Date = DateTime.Now, Remark = "Initial deposit" },
+            new Account { Id = 2, Amount = 2000, Date = DateTime.Now, Remark = "Initial deposit" },
+            new Account { Id = 3, Amount = 3000, Date = DateTime.Now, Remark = "Initial deposit" },
+            new Account { Id = 4, Amount = 4000, Date = DateTime.Now, Remark = "Initial deposit" },
+            new Account { Id = 5, Amount = 5000, Date = DateTime.Now, Remark = "Initial deposit" }
         };
         nextId = 6;
     }

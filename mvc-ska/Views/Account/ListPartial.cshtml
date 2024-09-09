@@ -1,0 +1,24 @@
+@model List<Account>
+
+<table>
+    @{
+        if (Model != null)
+        {
+            @foreach (var record in Model)
+            {
+                <tr>
+                    <td>Amount: </td>
+                    <td>@record.Amount</td>
+                </tr>
+                <tr>
+                    <td>Remark: </td>
+                    <td>@record.Remark</td>
+                </tr>
+                <tr>
+                    <td>Date: </td>
+                    <td>@record.Date</td>
+                </tr>
+            } 
+        }
+    }
+</table>
