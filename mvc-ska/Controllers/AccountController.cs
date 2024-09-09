@@ -35,7 +35,6 @@ public class AccountController : Controller
         {
             return View( "Index", model);
         }
-
         
         account.Id = _accountService.nextId++;
         _accountService.accounts.Add(account);
