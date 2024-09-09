@@ -3,17 +3,17 @@ using mvc_ska.services;
 
 namespace mvc_ska.Controllers.api.v1;
 
-[Route("api/v1/[controller]")]
-public class AccountController : Controller
+[Route("api")]
+public class RecordController : Controller
 {
     private readonly AccountService _accountService;
-    public AccountController(AccountService accountService)
+    public RecordController(AccountService accountService)
     {
         _accountService = accountService;
     }
     
-    [HttpGet("list")]
-    public IActionResult List()
+    [HttpGet("records")]
+    public IActionResult Records()
     {
         return Ok(_accountService.accounts);
     }
