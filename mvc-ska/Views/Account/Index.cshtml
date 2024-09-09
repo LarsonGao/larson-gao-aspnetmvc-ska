@@ -1,0 +1,31 @@
+@model mvc_ska.Models.ViewModels.AccountView 
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<div>
+    <div class="partial-view">
+        @Html.Partial("CreatePartial", Model.Account)
+    </div>
+    <div class="partial-view">
+        @Html.Partial("ListPartial", Model.Accounts)
+    </div>
+</div>
+</body>
+</html>
+
+<style>
+    .partial-view {
+        border: 1px solid #ccc; /* 边框颜色 */
+        padding: 15px; /* 内边距 */
+        margin-bottom: 10px; /* 下边距 */
+    }
+</style>
